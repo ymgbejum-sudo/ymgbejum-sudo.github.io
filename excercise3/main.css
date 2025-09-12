@@ -1,0 +1,10 @@
+#div {
+	box-sizing: content-box;
+	width: 100px;
+	height: 100px;
+}
+#div {
+	box-sizing: border-box;
+	width: 200px;
+	height: 200px;
+}

@@ -1,0 +1,70 @@
+* {background-color: black;}
+/* Define the keyframes for the falling motion */
+@keyframes fall {
+  from {
+    transform: translateY(-10000px); /* Start above the container */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-2334); /* End at its normal position */
+    opacity: 1;
+  }
+}
+
+/* Style the lines and apply the base animation */
+.line {
+  height: 10px; /* Or any height for your lines */
+  width: 6000px;
+  background-color: white;
+  margin-bottom: 10px;
+  opacity: 0; /* Hide elements initially */
+  
+  /* Apply the animation */
+  animation-name: fall;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards; /* Keep the end state */
+  animation-timing-function: ease-out;
+}
+
+/* Apply staggered delays using :nth-child */
+.line:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 0.3s;
+
+}
+
+.line:nth-child(4) {
+  animation-delay: 0.4s;
+
+}
+
+.line:nth-child(5) {
+  animation-delay: 0.6s;
+
+}
+
+.line:nth-child(6) {
+  animation-delay: 0.6s;
+
+}
+
+.line:nth-child(7) {
+  animation-delay: 0.7s;
+
+}
+
+.line:nth-child(8) {
+  animation-delay: 0.8s;
+/* Add more rules for more lines */
+
+
+
+  
+ 
