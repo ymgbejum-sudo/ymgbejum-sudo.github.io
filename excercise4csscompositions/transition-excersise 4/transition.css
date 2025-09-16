@@ -1,0 +1,30 @@
+* {background-color: lawngreen;}
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #blueviolet;
+}
+
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db; /* Initial background color */
+    border-radius: 10px; /* Initial border radius */
+    
+    /* The transition property is the key.
+       It applies to all changes, lasts for 0.6 seconds,
+       and uses an 'ease-in-out' timing function. */
+    transition: all 0.6s ease-in-out;
+}
+
+/* This is the final state, triggered on hover */
+.transition-box:hover {
+    width: 200px;
+    height: 200px;
+    background-color: #e74c3c; /* Final background color */
+    border-radius: 50%; /* Final border radius (makes it a circle) */
+    transform: rotate(180deg); /* Rotate the element */
+}

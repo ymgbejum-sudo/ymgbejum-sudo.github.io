@@ -1,0 +1,35 @@
+body { Hi
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white; /* Text color for visibility */
+    background-color: #45a3e5; /* Initial background color */
+    animation: color-change 20s infinite alternate; /* Apply the animation */
+}
+
+@keyframes color-change {
+    0% {
+        background-color: #45a3e5; /* Bright blue */
+    }
+    25% {
+        background-color: #66bf39; /* Vibrant green */
+    }
+    50% {
+        background-color: #eb670f; /* Deep orange */
+    }
+    75% {
+        background-color: #f35; /* Bright pink */
+    }
+    100% {
+        background-color: #864cbf; /* Rich purple */
+    }
+}
+
+h1 { Hi
+    font-size: 3rem;
+    text-align: center;
+}

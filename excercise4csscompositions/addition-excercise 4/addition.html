@@ -1,0 +1,38 @@
+<html lang="en-US">
+  <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition</title>
+    <link rel="stylesheet" href="addition.css">
+     <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: steelblue;
+        transition: all 0.3s ease;
+      }
+
+      .box.large {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+      }
+
+      .shape.triangle {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button id="toggleButton">Toggle Size</button>
+
+    <script>
+      document.getElementById('toggleButton').addEventListener('click', function() {
+        document.querySelector('.box').classList.toggle('large');
+      });
+    </script>
+  </body>
+</html>
