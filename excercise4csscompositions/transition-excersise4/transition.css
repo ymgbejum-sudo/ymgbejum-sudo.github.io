@@ -1,5 +1,4 @@
-
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,10 +10,10 @@
   align-items: center;
   height: 400vh;
   width: 100%;
-  background-color: blueviolet
+  background-color: blueviolet; /* fixed invalid value */
 }
 
-
+/* Box styling */
 .transition-box {
   width: 400px;
   height: 400px;
@@ -22,10 +21,10 @@
   border-radius: 10px;
   position: absolute;
   
-  
+  /* Transition for hover */
   transition: all 0.6s ease-in-out;
 
- 
+  /* Keyframes animation */
   animation: pulseSpin 4s infinite ease-in-out;
 }
 
@@ -38,7 +37,7 @@
   transform: rotate(180deg);
 }
 
-/* Keyframes!!!! */
+/* Keyframes */
 @keyframes pulseSpin {
   0% {
     transform: scale(1) rotate(0deg);
