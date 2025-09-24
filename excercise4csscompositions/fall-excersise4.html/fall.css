@@ -1,3 +1,14 @@
+p a {
+  position: fixed;       /* stick it to the page corner */
+  top: 20px;             /* space from top */
+  left: 20px;            /* space from left */
+  font-size: 20px;     /* make it large */
+  font-weight: bold;     /* bold text */
+  color: floralwhite;          
+  text-decoration: none; /* remove underline */
+  z-index: 9999;         /* keep it above other elements */
+}
+
 * {background-color: black;}
 /* Define the keyframes for the falling motion */
 @keyframes fall {
