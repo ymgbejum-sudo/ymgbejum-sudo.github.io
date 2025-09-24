@@ -1,34 +1,43 @@
+/* Target the link inside <p> */
+p a {
+  position: fixed;       /* stick it to the page corner */
+  top: 20px;             /* space from top */
+  left: 20px;            /* space from left */
+  font-size: 2.5rem;     /* make it large */
+  font-weight: bold;     /* bold text */
+  color: white;          /* white text */
+  text-decoration: none; /* remove underline */
+  z-index: 9999;         /* keep it above other elements */
+}
+
+p a:hover {
+  color: yellow;         /* hover color */
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-{
+body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400vh;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  height: 100vh;             /* full viewport height */
   width: 100%;
-  background-color: blueviolet; /* fixed invalid value */
+  background-color: blueviolet; 
 }
 
-/* Box styling */
 .transition-box {
   width: 400px;
   height: 400px;
   background-color: #3498db;
   border-radius: 10px;
-  position: absolute;
-  
-  /* Transition for hover */
-  transition: all 0.6s ease-in-out;
 
-  /* Keyframes animation */
+  transition: all 0.6s ease-in-out;
   animation: pulseSpin 4s infinite ease-in-out;
 }
 
-/* Hover effect */
 .transition-box:hover {
   width: 200px;
   height: 100px;
@@ -37,7 +46,6 @@
   transform: rotate(180deg);
 }
 
-/* Keyframes */
 @keyframes pulseSpin {
   0% {
     transform: scale(1) rotate(0deg);
