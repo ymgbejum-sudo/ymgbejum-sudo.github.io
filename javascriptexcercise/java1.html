@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Excersise 4</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      transition: background 1s ease;
+      background: white;
+    }
+
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background: black;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+            
+    .party {
+      background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
+      animation: rainbow 6s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
+</head>
+<body>
+  <p style="font-size: 20px; position: absolute; top: 10px; left: 10px;">
+  <a href="../index.html">Back to Home</a><br>
+</p>
+  <button id="toggleButton">Click Me!</button>
+
+  <script>
+    const button = document.getElementById("toggleButton");
+    button.addEventListener("click", () => {
+      document.body.classList.toggle("party");
+      button.textContent = 
+        document.body.classList.contains("party") 
+        ? "Turn It Off" 
+        : "Click Me,You Wont!";
+    });
+  </script>
+</body>
+</html>
