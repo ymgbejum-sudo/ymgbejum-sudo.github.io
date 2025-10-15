@@ -7,92 +7,63 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: white;
+      background: white;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
       font-family: sans-serif;
-    }
-
-    a {
-      margin: 8px;
-      text-decoration: none;
-      color: hotpink;
-      font-weight: bold;
-    }
-
-    h2 {
-      margin: 10px;
-      color: hotpink;
+      height: 100vh;
+      overflow: hidden;
     }
 
     #pattern {
       display: flex;
       flex-wrap: wrap;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
       justify-content: center;
       align-content: center;
+      width: 100vw;
+      height: 100vh;
     }
 
     .word {
-      display: inline-block;
-      margin: 6px;
+      margin: 5px;
       padding: 8px 14px;
-      font-size: 18px;
-      font-family: Arial, sans-serif;
       border-radius: 8px;
       color: white;
+      font-size: 18px;
     }
 
-    .style1 {
-      background-color: hotpink;
-    }
+    .pink { background: hotpink; }
+    .darkpink { background: deeppink; }
 
-    .style2 {
-      background-color: deeppink;
+    a {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: hotpink;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
-  <a href="pattern2.html">Back to Changing Size</a>
-  <h2>Alternating Random Text Pattern</h2>
-
+  <a href="pattern2.html">Back</a>
   <div id="pattern"></div>
 
   <script>
     const container = document.getElementById("pattern");
+    const wordsA = ["Hey!", "What's up?", "Hi", "Yo!", "Hello!"];
+    const wordsB = ["Bye!", "Hi", "Peace!", "Cya!", "Bye!"];
+    const totalWords = Math.ceil(window.innerWidth / 120) * Math.ceil(window.innerHeight / 60);
 
-
-    const wordsA = ["Whats up?", "Bye!", "Hey!", "Sup?", "Hey!", "Whats up?", "Hi again!"];
-    const wordsB = ["Bye..!", "Later!", "Cya!", "Goodbye!", "Peace!", "Take care!"];
-
-    
-    const rows = Math.ceil(window.innerHeight / 60);
-    const cols = Math.ceil(window.innerWidth / 120);
-    const totalWords = rows * cols;
-
-    // how can i ensure theres enough to take up the screen
     for (let i = 0; i < totalWords; i++) {
-      const word = document.createElement("span");
-
-      // switch between both styles
-      if (i % 2 === 0) {
-        word.className = "word style1";
-        word.textContent = wordsA[Math.floor(Math.random() * wordsA.length)];
-      } else {
-        word.className = "word style2";
-        word.textContent = wordsB[Math.floor(Math.random() * wordsB.length)];
-      }
-
-      container.appendChild(word);
+      const span = document.createElement("span");
+      const isEven = i % 2 === 0;
+      span.className = `word ${isEven ? "pink" : "darkpink"}`;
+      span.textContent = (isEven ? wordsA : wordsB)[Math.floor(Math.random() * (isEven ? wordsA : wordsB).length)];
+      container.appendChild(span);
     }
   </script>
-
 </body>
 </html>
