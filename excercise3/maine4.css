@@ -1,0 +1,73 @@
+
+{
+	background-color:darkgreen;
+	.box {
+  width: 600px;
+  height: 600px;
+  background-color: blue;
+  transition: background-color 0.5s ease-in-out; /* Shorthand property */
+}
+
+.box:hover {
+  background-color: red;
+}
+.button {
+	border-radius: 400px;
+	background-color: orange;
+	height: 40px
+	width:1px;
+}
+.button:hover {
+	background-color: hotpink;
+}
+
+.box:hover {
+  background-color: red;
+}
+.my-button {
+  background-color: #007bff;
+  color: white;
+  padding: 50px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Define the transition for all properties over 0.3 seconds with an ease timing function */
+  transition: all 0.3s ease; 
+}
+
+.my-button:hover {
+  font-weight: 200px;
+  background-color: #0056b3; /* Change background color on hover */
+  transform: scale(1.05);   /* Slightly enlarge the button on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+.jumping-shape {
+  width: 200px;
+  height: 200px;
+  background-color: dodgerblue;
+  position: relative; /* Important for positioning during animation */
+}
+.jumping-shape:hover {
+	@keyframes jump-out {
+  0% {
+    transform: scale(1) translateZ(0); /* Initial state */
+  }
+  50% {
+    transform: scale(1.2) translateZ(100px); /* Jumps out and scales up */
+  }
+  100% {
+    transform: scale(1) translateZ(0); /* Returns to original state */
+  }
+.jumping-shape:hover {
+  animation: jump-out 0.5s ease-in-out forwards; /* Apply the animation */
+}
+.rotate-box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  margin: 50px; /* Optional: adds some space around the box */
+  
+  /* Apply the rotation */
+  transform: rotate(45deg); /* Rotates the box 45 degrees clockwise */
+}
+

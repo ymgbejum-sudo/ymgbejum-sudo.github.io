@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternating Text Pattern</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    a {
+      margin: 8px;
+      text-decoration: none;
+      color: hotpink;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 10px;
+      color: hotpink;
+    }
+
+    #pattern {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .word {
+      display: inline-block;
+      margin: 6px;
+      padding: 8px 14px;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .style1 {
+      background-color: hotpink;
+    }
+
+    .style2 {
+      background-color: deeppink;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="pattern2.html">Back to Changing Size</a>
+  <h2>Alternating Random Text Pattern</h2>
+
+  <div id="pattern"></div>
+
+  <script>
+    const container = document.getElementById("pattern");
+
+
+    const wordsA = ["Whats up?", "Bye!", "Hey!", "Sup?", "Hey!", "Whats up?", "Hi again!"];
+    const wordsB = ["Bye..!", "Later!", "Cya!", "Goodbye!", "Peace!", "Take care!"];
+
+    
+    const rows = Math.ceil(window.innerHeight / 60);
+    const cols = Math.ceil(window.innerWidth / 120);
+    const totalWords = rows * cols;
+
+    // how can i ensure theres enough to take up the screen
+    for (let i = 0; i < totalWords; i++) {
+      const word = document.createElement("span");
+
+      // switch between both styles
+      if (i % 2 === 0) {
+        word.className = "word style1";
+        word.textContent = wordsA[Math.floor(Math.random() * wordsA.length)];
+      } else {
+        word.className = "word style2";
+        word.textContent = wordsB[Math.floor(Math.random() * wordsB.length)];
+      }
+
+      container.appendChild(word);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changing Size</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    a {
+      margin: 8px;
+      text-decoration: none;
+      color: hotpink;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 10px;
+      color: hotpink;
+    }
+
+    #pattern {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .shape {
+      margin: 4px;
+      display: inline-block;
+    }
+
+    .circle {
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .square {
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="pattern.html">Back to Alternating Shapes</a>
+  <a href="pattern3.html">Next to Text-based Pattern</a>
+  <h2>Changing Size</h2>
+
+  <div id="pattern"></div>
+
+  <script>
+    const container = document.getElementById("pattern");
+
+    // Calculate how many shapes fit across and down
+    const rows = Math.ceil(window.innerHeight / 80);
+    const cols = Math.ceil(window.innerWidth / 80);
+    const totalShapes = rows * cols;
+
+    for (let i = 0; i < totalShapes; i++) {
+      const shape = document.createElement("div");
+
+      //alternating between shapes
+      shape.className = i % 2 === 0 ? "shape circle" : "shape square";
+
+      // gradual change?
+      const size = 30 + (i % 10) * 5; // repeats size growth every 10 shapes
+      shape.style.width = size + "px";
+      shape.style.height = size + "px";
+
+      container.appendChild(shape);
+    }
+  </script>
+
+</body>
+</html>
