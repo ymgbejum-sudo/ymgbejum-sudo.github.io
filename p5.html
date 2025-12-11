@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Balls — p5.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // Number of balls (between 8 and 30)
+  const NUM_BALLS = 11;
+  let balls = [];
+
+  class Ball {
+    constructor(x, y, r, col) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+      this.vx = random(-3, 3);
+      this.vy = random(-3, 3);
+      this.col = col;
+    }
+
+    update() {
+      // Move
+      this.x += this.vx;
+      this.y += this.vy;
+
+      // Bounce on edges
+      if (this.x - this.r < 0 || this.x + this.r > width) {
+        this.vx *= -1;
+      }
+      if (this.y - this.r < 0 || this.y + this.r > height) {
+        this.vy *= -1;
+      }
+    }
+
+    draw() {
+      noStroke();
+      fill(this.col);
+      circle(this.x, this.y, this.r * 2);
+    }
+  }
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    for (let i = 0; i < NUM_BALLS; i++) {
+      const x = random(width);
+      const y = random(height);
+      const r = random(20, 60);
+      const col = color(random(255), random(255), random(255), 180);
+      balls.push(new Ball(x, y, r, col));
+    }
+  }
+
+  function draw() {
+    background(0, 40); // slight trail effect
+    for (let b of balls) {
+      b.update();
+      b.draw();
+    }
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+</script>
+</body>
+</html>

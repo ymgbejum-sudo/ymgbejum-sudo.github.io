@@ -63,7 +63,7 @@
   <script>
     const container = document.getElementById("pattern");
 
-    // Calculate how many shapes fit across and down
+  
     const rows = Math.ceil(window.innerHeight / 80);
     const cols = Math.ceil(window.innerWidth / 80);
     const totalShapes = rows * cols;
@@ -71,11 +71,11 @@
     for (let i = 0; i < totalShapes; i++) {
       const shape = document.createElement("div");
 
-      //alternating between shapes
+   
       shape.className = i % 2 === 0 ? "shape circle" : "shape square";
 
-      // gradual change?
-      const size = 30 + (i % 10) * 5; // repeats size growth every 10 shapes
+      // consistent change, use const size for growth evolutuion
+      const size = 30 + (i % 10) * 5; 
       shape.style.width = size + "px";
       shape.style.height = size + "px";
 
