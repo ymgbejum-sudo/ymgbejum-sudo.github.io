@@ -15,7 +15,7 @@
 </head>
 <body>
 <script>
-  // Number of balls (between 8 and 30)
+  
   const NUM_BALLS = 11;
   let balls = [];
 
@@ -30,7 +30,6 @@
     }
 
     update() {
-      // Move
       this.x += this.vx;
       this.y += this.vy;
 
@@ -61,7 +60,7 @@ function setup() {
   }
 
   function draw() {
-    background(0, 40); // slight trail effect
+    background(0, 40); 
     for (let b of balls) {
       b.update();
       b.draw();
